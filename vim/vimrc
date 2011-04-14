@@ -123,3 +123,8 @@ function! OutlineToggle()
 	endif
 endfunction
 
+" Stolen from https://github.com/carlhuda/janus/blob/master/vimrc
+" Directories for swp files
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+
