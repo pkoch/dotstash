@@ -1,0 +1,121 @@
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+""""""""  wyw.dcweb.cn/vim/.vimrc.html  """"""""
+set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P ""Eu não percebo bem o q isto faz, mas ok
+
+"" Navegação ao longo dos erros
+nmap <F11> :cp<CR>
+nmap <F12> :cn<CR>
+
+" Highlight space errors in C/C++ source files (Vim tip #935)
+let c_space_errors=1
+
+" Defaults
+set expandtab
+set smarttab
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set foldmethod=syntax
+let python_highlight_all=1
+
+" Como sugerido pelo Ademar, como implementado neste url
+au FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
+
+"""""""""""""""""  debian.vim  """""""""""""""""
+set nocompatible      " Use Vim defaults instead of 100% vi compatibility
+set backspace=indent,eol,start        " more powerful backspacing
+
+" Now we set some defaults for the editor
+set autoindent        " always set autoindenting on
+" set linebreak         " Don't wrap words by default
+set textwidth=0       " Don't wrap lines by default
+set viminfo='20,\"50  " read/write a .viminfo file, don't store more than
+                      " 50 lines of registers
+set history=50        " keep 50 lines of command line history
+set ruler             " show the cursor position all the time
+
+" Suffixes that get lower priority when doing tab completion for filenames.
+" These are files we are not likely to want to edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
+if has("autocmd")
+ " Enabled file type detection
+ " Use the default filetype settings. If you also want to load indent files
+ " to automatically do language-dependent indenting add 'indent' as well.
+ filetype plugin on
+ filetype indent on
+ autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
+endif " has ("autocmd")
+
+" We know xterm-debian is a color terminal
+if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
+  set t_Co=16
+  set t_Sf=^[[3%dm
+  set t_Sb=^[[4%dm
+endif
+"""""""""""""""""  vimrc  """""""""""""""""
+syntax on
+syntax enable
+let g:load_doxygen_syntax=1
+
+if &term =~ "xterm"
+	set background=light
+else
+	set background=dark
+endif
+
+if has("autocmd")
+   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal g'\"" | endif
+endif
+
+set showcmd            " Show (partial) command in status line.
+set showmatch          " Show matching brackets.
+set ignorecase         " Do case insensitive matching
+set smartcase          " Do smart case matching
+set incsearch          " Incremental search
+set autowrite          " Automatically save before commands like :next and :make
+set hidden             " Hide buffers when they are abandoned
+set mouse=a            " Enable mouse usage (all modes) in terminals
+
+
+"" Tabs
+map <SPACE> <C-w><C-w>
+nmap <tab> :tabn<CR>
+nmap <S-tab> :tabp<CR>
+nmap <C-tab> :tabnew<CR>
+nmap <C-S-tab> :tabclose<CR>
+
+command W w
+command Q q
+command Wq wq
+
+autocmd BufWinEnter *.rb TwoSpaceTabs
+set smartindent
+function! OutlineToggle()
+	if (! exists ("b:outline_mode"))
+		let b:outline_mode = 0
+	endif
+
+	if (b:outline_mode == 0)
+		syn region myFold start="{" end="}" transparent fold
+		syn sync fromstart
+		set foldmethod=syntax
+
+		silent! exec "%s/{{{/<<</"
+		silent! exec "%s/}}}/>>>/"
+
+		let b:outline_mode = 1
+	else
+		set foldmethod=marker
+
+		silent! exec "%s/<<</{{{/"
+		silent! exec "%s/>>>/}}}/"
+
+		let b:outline_mode = 0
+	endif
+endfunction
+
