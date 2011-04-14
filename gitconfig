@@ -11,6 +11,7 @@
 	b = branch
 	st = status -sb
 	ci = commit
+    co = checkout
 
 [color]
 	branch = auto
