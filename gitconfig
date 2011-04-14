@@ -6,7 +6,8 @@
 	editor = vim
 
 [alias]
-	gl = log --graph --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) <%an>' --abbrev-commit --date=relative
+    gl = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    glb = log --graph --decorate --pretty=oneline --abbrev-commit
 	b = branch
 	st = status -sb
 	ci = commit
