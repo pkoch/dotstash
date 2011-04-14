@@ -1,3 +1,7 @@
+"" Call pathogen before everything else.
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
