@@ -2,6 +2,12 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+filetype on        " enables filetype detection
+filetype plugin on " enables filetype specific plugins
+
+source $HOME/.vim/pkoch/autohighlight.vim
+source $HOME/.vim/pkoch/python.vim
+
 nnoremap  :GundoToggle<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
