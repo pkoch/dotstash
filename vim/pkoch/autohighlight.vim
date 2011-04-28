@@ -20,5 +20,4 @@ function! AutoHighlightToggle()
   endif
 endfunction
 
-call AutoHighlightToggle()
 set hls
