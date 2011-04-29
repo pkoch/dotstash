@@ -1,20 +1,20 @@
 [user]
-	name = Paulo Koch
-	email = paulo.koch@gmail.com
+    name = Paulo Koch
+    email = paulo.koch@gmail.com
 
 [core]
-	editor = vim
+    editor = vim
 
 [alias]
     gl = log --graph --decorate --pretty=oneline --abbrev-commit --all
     glb = log --graph --decorate --pretty=oneline --abbrev-commit
-	b = branch
-	st = status -sb
-	ci = commit
+    b = branch
+    st = status -sb
+    ci = commit
     co = checkout
 
 [color]
-	ui = auto
+    ui = auto
 
 [color "branch"]
     current = green reverse
@@ -22,5 +22,5 @@
     remote = red
 
 [github]
-	user = pkoch
-	token = 
+    user = pkoch
+    token = 
