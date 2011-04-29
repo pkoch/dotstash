@@ -12,6 +12,7 @@
     st = status -sb
     ci = commit
     co = checkout
+    up = checkout
 
 [color]
     ui = auto
