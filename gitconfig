@@ -14,10 +14,12 @@
     co = checkout
 
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
+	ui = auto
+
+[color "branch"]
+    current = green reverse
+    local = green
+    remote = red
 
 [github]
 	user = pkoch
