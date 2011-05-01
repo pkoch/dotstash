@@ -16,6 +16,8 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+let macvim_hig_shift_movement = 1
+
 """"""""  wyw.dcweb.cn/vim/.vimrc.html  """"""""
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P ""Eu não percebo bem o q isto faz, mas ok
 
