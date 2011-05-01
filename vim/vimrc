@@ -10,6 +10,9 @@ source $HOME/.vim/pkoch/python.vim
 
 nnoremap <leader>g :GundoToggle<CR>
 
+nnoremap <leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
