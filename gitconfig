@@ -9,6 +9,8 @@
     gl = log --graph --decorate --pretty=oneline --abbrev-commit --all
     glb = log --graph --decorate --pretty=oneline --abbrev-commit
     b = branch
+    d = diff
+    dc = diff --cached
     st = status -sb
     ci = commit
     co = checkout
