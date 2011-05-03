@@ -22,8 +22,8 @@ let macvim_hig_shift_movement = 1
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P ""Eu não percebo bem o q isto faz, mas ok
 
 "" Navegação ao longo dos erros
-nmap <F11> :cp<CR>
-nmap <F12> :cn<CR>
+nmap <F1> :cp<CR>
+nmap <F2> :cn<CR>
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
 let c_space_errors=1
