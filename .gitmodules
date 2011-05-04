@@ -45,3 +45,7 @@
 	path = vim/bundle/autoclose
 	url = https://github.com/blueyed/vim-autoclose
 	ignore = dirty
+[submodule "vim/bundle/taglist"]
+	path = vim/bundle/taglist
+	url = https://github.com/mexpolk/vim-taglist.git
+	ignore = dirty
