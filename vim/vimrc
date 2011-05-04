@@ -20,6 +20,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 let macvim_hig_shift_movement = 1
 
+set background=dark
+colorscheme solarized
+let g:solarized_contrast="high"
+
+
 """"""""  wyw.dcweb.cn/vim/.vimrc.html  """"""""
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P ""Eu não percebo bem o q isto faz, mas ok
 
@@ -79,12 +84,6 @@ endif
 syntax on
 syntax enable
 let g:load_doxygen_syntax=1
-
-if &term =~ "xterm"
-	set background=light
-else
-	set background=dark
-endif
 
 if has("autocmd")
    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
