@@ -41,3 +41,7 @@
 [submodule "vim/bundle/IndexedSearch"]
 	path = vim/bundle/IndexedSearch
 	url = https://github.com/vim-scripts/IndexedSearch.git
+[submodule "vim/bundle/autoclose"]
+	path = vim/bundle/autoclose
+	url = https://github.com/blueyed/vim-autoclose
+	ignore = dirty
