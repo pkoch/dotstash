@@ -32,8 +32,7 @@ set directory=~/.vim/backup
 set undodir=~/.vim/backup
 
 set background=dark
-colorscheme solarized
-let g:solarized_contrast="high"
+colorscheme desert
 
 highlight ColorColumn ctermbg=red guibg=red
 
