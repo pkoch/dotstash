@@ -64,6 +64,7 @@ let g:Tb_MapWindowNavArrows = 1
 let g:Tb_MapCTabSwitchBufs = 1
 let g:Tb_ModSelTarget = 1
 
+let g:pyflakes_use_quickfix = 0
 
 """"""""  wyw.dcweb.cn/vim/.vimrc.html  """"""""
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P ""Eu não percebo bem o q isto faz, mas ok
