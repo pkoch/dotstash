@@ -8,7 +8,6 @@ set smartindent        " Make autoindent smarter
 set smarttab           " Proper indenting with <Tab>
 set autowrite          " Automatically save before commands like :next and :make
 set backspace=indent,eol,start " more powerful backspacing
-set colorcolumn=80     " Vertical line on column 80
 set cursorline         " Highlight current line
 set foldmethod=syntax
 set hidden             " Hide buffers when they are abandoned
@@ -23,13 +22,16 @@ set scrolloff=3        " Never lean to the top or bottom of the window
 set showcmd            " Show (partial) command in status line.
 set showmatch          " Show matching brackets.
 set softtabstop=4 tabstop=4 shiftwidth=4 expandtab " Default whitespace settings
-set undofile           " Persistent undo history
 set viminfo='20,\"50   " read/write a .viminfo file, don't store more than 50 lines of registers
 set wildmenu           " Enhanced command-line completion.
 set wildmode=list:longest " Show all alternatives and complete furtherest possible.
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-set undodir=~/.vim/backup
+if version >= 730
+    set colorcolumn=80     " Vertical line on column 80
+    set undofile           " Persistent undo history
+    set undodir=~/.vim/backup
+endif
 
 set background=dark
 colorscheme desert
