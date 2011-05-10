@@ -58,7 +58,7 @@ autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "nor
 
 let macvim_hig_shift_movement = 1
 
-nnoremap <leader>t :TlistToggle<CR>
+nnoremap <leader>T :TlistToggle<CR>
 
 let g:Tb_MapWindowNavVim = 1
 let g:Tb_MapWindowNavArrows = 1
