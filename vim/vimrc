@@ -27,6 +27,7 @@ set softtabstop=4 tabstop=4 shiftwidth=4 expandtab " Default whitespace settings
 set viminfo='20,\"50   " read/write a .viminfo file, don't store more than 50 lines of registers
 set wildmenu           " Enhanced command-line completion.
 set wildmode=list:longest " Show all alternatives and complete furtherest possible.
+set completeopt=menuone,longest,preview " Better completion menu
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 if version >= 703
