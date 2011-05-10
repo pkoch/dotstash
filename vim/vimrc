@@ -60,8 +60,6 @@ let macvim_hig_shift_movement = 1
 
 nnoremap <leader>t :TlistToggle<CR>
 
-autocmd CursorHoldI * stopinsert " Use open mode, you rascal
-
 let g:Tb_MapWindowNavVim = 1
 let g:Tb_MapWindowNavArrows = 1
 let g:Tb_MapCTabSwitchBufs = 1
