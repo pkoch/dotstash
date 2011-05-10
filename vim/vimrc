@@ -56,6 +56,9 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Retore last edit location when opening a file
+autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | endif
+
 let macvim_hig_shift_movement = 1
 
 nnoremap <leader>t :TlistToggle<CR>
@@ -76,21 +79,9 @@ let c_space_errors=1
 " Como sugerido pelo Ademar, como implementado neste url
 au FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 
-"""""""""""""""""  debian.vim  """""""""""""""""
-
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyo,.pyc,.rbc
-
-if has("autocmd")
- " Enabled file type detection
- " Use the default filetype settings. If you also want to load indent files
- " to automatically do language-dependent indenting add 'indent' as well.
- filetype plugin on
- filetype indent on
- autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
- autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | endif " Retore last edit location when opening a file
-endif " has ("autocmd")
 
 " We know xterm-debian is a color terminal
 if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
