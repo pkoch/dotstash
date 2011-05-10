@@ -50,3 +50,6 @@
 	path = vim/bundle/ropevim
 	url = https://github.com/klen/rope-vim.git
 	ignore = dirty
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = https://github.com/wincent/Command-T.git
