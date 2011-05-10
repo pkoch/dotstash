@@ -67,8 +67,8 @@ let g:Tb_ModSelTarget = 1
 
 let g:pyflakes_use_quickfix = 0
 
-""""""""  wyw.dcweb.cn/vim/.vimrc.html  """"""""
-set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P ""Eu não percebo bem o q isto faz, mas ok
+set statusline=%<%f%h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}\\|%{&ff}]%y\ %-(%l,%c%V%) " Eu não percebo bem o q isto faz, mas ok
+set laststatus=2
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
 let c_space_errors=1
