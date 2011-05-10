@@ -41,7 +41,6 @@ colorscheme desert
 syntax on                  " Use syntax highlighting
 filetype plugin indent on  " Enables filetype specific stuff
 
-source $HOME/.vim/pkoch/autohighlight.vim
 source $HOME/.vim/pkoch/python.vim
 
 nnoremap <leader>g :GundoToggle<CR>
