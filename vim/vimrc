@@ -40,7 +40,10 @@ endif
 set background=dark
 colorscheme desert
 
-syntax on                  " Use syntax highlighting
+if !exists("syntax_on")
+  syntax on " Use syntax highlighting
+endif
+
 filetype plugin indent on  " Enables filetype specific stuff
 
 nnoremap <leader>g :GundoToggle<CR>
@@ -91,6 +94,6 @@ if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
 endif
 
 " My pinky finger is never fast enough.
-command W w
-command Q q
-command Wq wq
+command! W w
+command! Q q
+command! Wq wq
