@@ -17,6 +17,7 @@ set history=50         " keep 50 lines of command line history
 set ignorecase         " Wait for smartcase...
 set smartcase          " Do smart case matching when searching
 set incsearch          " Incremental search
+set hlsearch           " Highlight search results
 set list               " Show invisibles
 set listchars=tab:▸\ ,eol:¬
 set mouse=a            " Enable mouse usage (all modes) in terminals
