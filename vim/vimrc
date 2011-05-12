@@ -14,6 +14,7 @@ set foldmethod=syntax
 set foldlevel=99
 set hidden             " Hide buffers when they are abandoned
 set history=50         " keep 50 lines of command line history
+set ignorecase         " Wait for smartcase...
 set smartcase          " Do smart case matching when searching
 set incsearch          " Incremental search
 set list               " Show invisibles
