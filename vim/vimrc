@@ -44,6 +44,7 @@ syntax on                  " Use syntax highlighting
 filetype plugin indent on  " Enables filetype specific stuff
 
 nnoremap <leader>g :GundoToggle<CR>
+let g:gundo_close_on_revert = 1
 
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
