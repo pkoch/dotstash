@@ -42,8 +42,6 @@ colorscheme desert
 syntax on                  " Use syntax highlighting
 filetype plugin indent on  " Enables filetype specific stuff
 
-source $HOME/.vim/pkoch/python.vim
-
 nnoremap <leader>g :GundoToggle<CR>
 
 " Suffixes that get lower priority when doing tab completion for filenames.
