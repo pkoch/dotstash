@@ -67,8 +67,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Retore last edit location when opening a file
 autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | endif
 
-let macvim_hig_shift_movement = 1
-
 nnoremap <leader>T :TlistToggle<CR>
 
 let g:Tb_MapWindowNavVim = 1
