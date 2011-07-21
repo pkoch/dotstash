@@ -15,6 +15,7 @@
     ci = commit
     co = checkout
     up = checkout
+    ff = merge --ff-only
 
 [color]
     ui = auto
