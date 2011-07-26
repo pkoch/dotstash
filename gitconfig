@@ -17,6 +17,9 @@
     up = checkout
     ff = merge --ff-only
 
+[merge]
+    stat = False
+
 [color]
     ui = auto
 
