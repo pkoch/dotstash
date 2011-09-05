@@ -1,4 +1,13 @@
 "" Call pathogen before everything else.
+"
+" TODO
+" https://github.com/claytron/dotfiles/blob/master/.vimrc
+" http://sontek.net/turning-vim-into-a-modern-python-ide
+" http://vimcasts.org/episodes/using-the-changelist-and-jumplist/
+" http://vimdoc.sourceforge.net/htmldoc/quickfix.html
+" http://vimzone.pixelblaster.ro/
+" https://github.com/blueyed/dotfiles
+"
 filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
