@@ -1,3 +1,6 @@
+--ignore-dir=.env
+--ignore-dir=django
+
 --type-set=json=.json
 
 --smart-case
