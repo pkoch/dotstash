@@ -44,7 +44,7 @@
 	ignore = untracked
 [submodule "vim/bundle/taglist"]
 	path = vim/bundle/taglist
-	url = https://github.com/mexpolk/vim-taglist.git
+	url = https://github.com/thisivan/vim-taglist.git
 	ignore = untracked
 [submodule "vim/bundle/ropevim"]
 	path = vim/bundle/ropevim
