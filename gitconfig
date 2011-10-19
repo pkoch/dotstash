@@ -1,33 +1,33 @@
 [user]
-    name = Paulo Koch
-    email = paulo.koch@gmail.com
+	name = Paulo Koch
+	email = paulo.koch@gmail.com
 
 [core]
-    editor = vim
+	editor = vim
 
 [alias]
-    gl = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    glb = log --graph --decorate --pretty=oneline --abbrev-commit
-    b = branch
-    d = diff
-    dc = diff --cached
-    st = status -sb
-    ci = commit
-    co = checkout
-    up = checkout
-    ff = merge --ff-only
+	gl = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	glb = log --graph --decorate --pretty=oneline --abbrev-commit
+	b = branch
+	d = diff
+	dc = diff --cached
+	st = status -sb
+	ci = commit
+	co = checkout
+	up = checkout
+	ff = merge --ff-only
 
 [merge]
-    stat = False
+	stat = False
 
 [color]
-    ui = auto
+	ui = auto
 
 [color "branch"]
-    current = green reverse
-    local = green
-    remote = red
+	current = green reverse
+	local = green
+	remote = red
 
 [github]
-    user = pkoch
-    token = 
+	user = pkoch
+	token =
