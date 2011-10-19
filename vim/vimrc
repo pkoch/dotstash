@@ -68,6 +68,7 @@ let NERDTreeIgnore = []
 for suffix in split(&suffixes, ',')
     let NERDTreeIgnore += [ escape(suffix, '.~$') . '$' ]
 endfor
+let NERDTreeMinimalUI=1
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
