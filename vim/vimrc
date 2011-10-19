@@ -19,7 +19,7 @@ set smarttab           " Proper indenting with <Tab>
 set autowrite          " Automatically save before commands like :next and :make
 set backspace=indent,eol,start " more powerful backspacing
 set cursorline         " Highlight current line
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=99
 set hidden             " Hide buffers when they are abandoned
 set history=50         " keep 50 lines of command line history
