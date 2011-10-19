@@ -19,6 +19,7 @@
 
 [merge]
 	stat = False
+	tool = kdiff3
 
 [color]
 	ui = auto
