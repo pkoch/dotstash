@@ -66,3 +66,11 @@
 	path = vim/bundle/json
 	url = https://github.com/leshill/vim-json.git
 	ignore = untracked
+[submodule "vim/bundle/vim-matchit"]
+	path = vim/bundle/vim-matchit
+	url = https://github.com/edsono/vim-matchit.git
+	ignore = untracked
+[submodule "vim/bundle/vim-ruby-refactoring"]
+	path = vim/bundle/vim-ruby-refactoring
+	url = https://github.com/ecomba/vim-ruby-refactoring.git
+	ignore = untracked
