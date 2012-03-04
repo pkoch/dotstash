@@ -48,7 +48,7 @@ if version >= 703
 endif
 
 set background=dark
-colorscheme desert
+colorscheme vividchalk
 
 if !exists("syntax_on")
   syntax on " Use syntax highlighting
