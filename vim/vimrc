@@ -79,7 +79,7 @@ endfor
 let NERDTreeMinimalUI=1
 
 " Retore last edit location when opening a file
-autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | endif
+autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | exe "normal zz" | endif
 
 nnoremap <leader>T :TlistToggle<CR>
 
