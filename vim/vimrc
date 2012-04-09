@@ -47,6 +47,8 @@ if version >= 703
     set undodir=~/.vim/backup
 endif
 
+au FocusLost * silent! wall
+
 set background=dark
 colorscheme vividchalk
 
