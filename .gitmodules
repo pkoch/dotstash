@@ -86,3 +86,7 @@
 	path = vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
 	ignore = untracked
+[submodule "vim/bundle/lusty"]
+	path = vim/bundle/lusty
+	url = https://github.com/sjbach/lusty.git
+	ignore = untracked
