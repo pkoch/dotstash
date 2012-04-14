@@ -48,6 +48,7 @@ if version >= 703
 endif
 
 au FocusLost * silent! wall
+set clipboard=unnamed " Share paste buffers with OS.
 
 set background=dark
 colorscheme vividchalk
