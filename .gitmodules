@@ -90,3 +90,7 @@
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
 	ignore = untracked
+[submodule "vim/bundle/jslint.vim"]
+	path = vim/bundle/jslint.vim
+	url = https://github.com/hallettj/jslint.vim.git
+	ignore = untracked
