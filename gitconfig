@@ -8,6 +8,7 @@
 [alias]
 	gl = log --graph --decorate --pretty=oneline --abbrev-commit --all --date-order
 	glb = log --graph --decorate --pretty=oneline --abbrev-commit
+	gla = !trap "" 13 && git log --graph --oneline --decorate --all $(git reflog | awk '{print $1}')
 	b = branch
 	d = diff
 	dc = diff --cached
