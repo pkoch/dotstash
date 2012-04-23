@@ -6,7 +6,7 @@
 	editor = vim
 
 [alias]
-	gl = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	gl = log --graph --decorate --pretty=oneline --abbrev-commit --all --date-order
 	glb = log --graph --decorate --pretty=oneline --abbrev-commit
 	b = branch
 	d = diff
