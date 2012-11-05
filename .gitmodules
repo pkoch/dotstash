@@ -94,3 +94,6 @@
 	path = vim/bundle/jslint.vim
 	url = https://github.com/hallettj/jslint.vim.git
 	ignore = untracked
+[submodule "vim/bundle/gyp.vim"]
+	path = vim/bundle/gyp.vim
+	url = https://github.com/kelan/gyp.vim.git
