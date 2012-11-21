@@ -1,0 +1,17 @@
+{
+	"auto_upgrade_last_run": 1353465537,
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Auto Semi-Colon",
+		"Package Control",
+		"PythonTidy",
+		"SideBarEnhancements",
+		"SublimeClang",
+		"SublimeCodeIntel",
+		"SublimeGDB",
+		"SublimeLinter",
+		"SublimeRope",
+		"Theme - Soda"
+	]
+}
