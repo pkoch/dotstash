@@ -1,5 +1,7 @@
 {
 	"bold_folder_labels": true,
+	"close_windows_when_empty": true,
+	"draw_minimap_border": true,
 	"caret_style": "phase",
 	"theme": "Soda Dark.sublime-theme",
 	"draw_white_space": "selection",
@@ -21,10 +23,41 @@
 	[
 		80
 	],
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		".DS_Store"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS"
+	],
 	"save_on_focus_lost": true,
 	"shift_tab_unindent": true,
 	"spell_check": false,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": false,
+	"trim_automatic_white_space": true,
 	"vintage_start_in_command_mode": true
 }
