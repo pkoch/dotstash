@@ -4,6 +4,7 @@
 
 [core]
 	editor = vim
+	whitespace = trailing-space,space-before-tab,tab-in-indent
 
 [alias]
 	gl = log --graph --decorate --pretty=oneline --abbrev-commit --all --date-order
@@ -23,7 +24,7 @@
 	tool = kdiff3
 
 [mergetool "kdiff3"]
-	#path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+	path = /Users/pkoch/Applications/kdiff3.app/Contents/MacOS/kdiff3
 
 [color]
 	ui = auto
@@ -32,7 +33,5 @@
 	current = green reverse
 	local = green
 	remote = red
-
-[github]
-	user = pkoch
-	token =
+[push]
+	default = simple
