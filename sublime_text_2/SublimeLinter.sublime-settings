@@ -1,0 +1,6 @@
+{
+    "sublimelinter_executable_map":
+      {
+        "ruby": "rvm-auto-ruby"
+      }
+}
