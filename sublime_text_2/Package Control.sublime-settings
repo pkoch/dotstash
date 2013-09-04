@@ -1,23 +1,30 @@
 {
-	"auto_upgrade_last_run": 1353911690,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"All Autocomplete",
 		"Auto Semi-Colon",
+		"BeautifyRuby",
+		"Clipboard History",
 		"Git",
+		"GitGrep",
 		"GitGutter",
 		"Jinja2",
 		"Package Control",
 		"PythonTidy",
+		"RuboCop",
+		"RubyCheckOnSave",
 		"RubyFormat",
 		"Sass",
 		"SideBarEnhancements",
 		"Simple Rails Navigator",
+		"sublime-dpaste",
 		"SublimeClang",
 		"SublimeCodeIntel",
 		"SublimeGDB",
 		"SublimeLinter",
 		"SublimeRope",
-		"Theme - Soda"
+		"Theme - Soda",
+		"Vagrant"
 	]
 }
