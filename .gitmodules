@@ -97,3 +97,6 @@
 [submodule "vim/bundle/gyp.vim"]
 	path = vim/bundle/gyp.vim
 	url = https://github.com/kelan/gyp.vim.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
