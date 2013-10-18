@@ -18,14 +18,6 @@
 	path = vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
 	ignore = untracked
-[submodule "vim/bundle/YankRing"]
-	path = vim/bundle/YankRing
-	url = https://github.com/vim-scripts/YankRing.vim.git
-	ignore = untracked
-[submodule "vim/bundle/pythoncomplete"]
-	path = vim/bundle/pythoncomplete
-	url = https://github.com/vim-scripts/pythoncomplete
-	ignore = untracked
 [submodule "vim/bundle/pyflakes-vim"]
 	path = vim/bundle/pyflakes-vim
 	url = https://github.com/kevinw/pyflakes-vim.git
@@ -33,10 +25,6 @@
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim
-	ignore = untracked
-[submodule "vim/bundle/surround"]
-	path = vim/bundle/surround
-	url = https://github.com/tpope/vim-surround.git
 	ignore = untracked
 [submodule "vim/bundle/IndexedSearch"]
 	path = vim/bundle/IndexedSearch
@@ -70,10 +58,6 @@
 	path = vim/bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
 	ignore = untracked
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-	ignore = untracked
 [submodule "vim/bundle/vim-rvm"]
 	path = vim/bundle/vim-rvm
 	url = https://github.com/tpope/vim-rvm.git
@@ -85,10 +69,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
-	ignore = untracked
-[submodule "vim/bundle/lusty"]
-	path = vim/bundle/lusty
-	url = https://github.com/sjbach/lusty.git
 	ignore = untracked
 [submodule "vim/bundle/jslint.vim"]
 	path = vim/bundle/jslint.vim
