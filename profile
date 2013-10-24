@@ -1,5 +1,5 @@
 #.bashrc
-if ! [ -z $PS1 ]; then
+if ! [[ -z $PS1 ]]; then
     bind Space:magic-space
     bind '"\e[A"':history-search-backward
     bind '"\e[B"':history-search-forward
@@ -12,7 +12,7 @@ if ! ps aux | grep ssh-agent | grep `whoami` | grep -v grep > /dev/null; then
     ssh-add 2> /dev/null
 fi
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+if [[ -f `brew --prefix`/etc/bash_completion ]]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
@@ -24,7 +24,7 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     fi
 fi
 
-if [ -f $HOME/.general_exports ]; then
+if [[ -f $HOME/.general_exports ]]; then
     . $HOME/.general_exports
 fi
 
