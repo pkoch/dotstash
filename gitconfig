@@ -33,5 +33,19 @@
 	current = green reverse
 	local = green
 	remote = red
+
 [push]
-	default = simple
+	default = current
+
+[grep]
+	lineNumber = true
+
+[mergetool]
+	prompt = false
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[rebase]
+	autosquash = true
