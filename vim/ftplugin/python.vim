@@ -5,6 +5,7 @@ autocmd FileType python setlocal autoindent nosmartindent cinwords=if,elif,else,
 " Auto-complete
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
+autocmd BufWritePost *.py call Pep8()
 
 " Add the virtualenv's site-packages to vim path
 py << EOF

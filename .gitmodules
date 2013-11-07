@@ -80,3 +80,6 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-pep8"]
+	path = vim/bundle/vim-pep8
+	url = https://github.com/nvie/vim-pep8.git
