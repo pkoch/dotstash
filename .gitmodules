@@ -42,10 +42,6 @@
 	path = vim/bundle/ropevim
 	url = https://github.com/klen/rope-vim.git
 	ignore = untracked
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
-	ignore = untracked
 [submodule "vim/bundle/json"]
 	path = vim/bundle/json
 	url = https://github.com/leshill/vim-json.git
@@ -70,13 +66,6 @@
 	path = vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
 	ignore = untracked
-[submodule "vim/bundle/jslint.vim"]
-	path = vim/bundle/jslint.vim
-	url = https://github.com/hallettj/jslint.vim.git
-	ignore = untracked
-[submodule "vim/bundle/gyp.vim"]
-	path = vim/bundle/gyp.vim
-	url = https://github.com/kelan/gyp.vim.git
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git

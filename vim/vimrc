@@ -9,8 +9,7 @@
 " https://github.com/blueyed/dotfiles
 "
 filetype off
-let g:LustyJugglerSuppressRubyWarning = 1
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 call pathogen#helptags()
 
 set nocompatible       " Use Vim defaults instead of 100% vi compatibility
@@ -52,7 +51,7 @@ au FocusLost * silent! wall
 set clipboard=unnamed " Share paste buffers with OS.
 
 set background=dark
-colorscheme vividchalk
+colorscheme darkblue
 
 highlight WrongWhitespace ctermbg=red guibg=red
 call matchadd('WrongWhitespace', '^ \+\t\+')
@@ -60,7 +59,7 @@ call matchadd('WrongWhitespace', '\s\+$')
 autocmd ColorScheme * highlight WrongWhitespace ctermbg=red guibg=red
 
 " This was causing too many diffs on undisciplined repositories
-" autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 if !exists("syntax_on")
   syntax on " Use syntax highlighting
@@ -85,13 +84,6 @@ let NERDTreeMinimalUI=1
 " Retore last edit location when opening a file
 autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | exe "normal zz" | endif
 
-nnoremap <leader>T :TlistToggle<CR>
-
-let g:Tb_MapWindowNavVim = 1
-let g:Tb_MapWindowNavArrows = 1
-let g:Tb_MapCTabSwitchBufs = 1
-let g:Tb_ModSelTarget = 1
-
 let g:pyflakes_use_quickfix = 0
 
 set statusline=%<%f%h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}\\|%{&ff}]%y\ %-(%l,%c%V%) " Eu não percebo bem o q isto faz, mas ok
@@ -114,6 +106,9 @@ endif
 command! W w
 command! Q q
 command! Wq wq
+
+" Select pasted text
+nnoremap gp `[v`]`
 
 " Syntastic is too slow on cucumber
 let g:syntastic_mode_map = { 'mode': 'active',

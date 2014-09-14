@@ -1,11 +1,13 @@
 " Indentation
 autocmd FileType python setlocal tabstop=4 expandtab shiftwidth=4 softtabstop=4
+
 autocmd FileType python setlocal autoindent nosmartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 
 " Auto-complete
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
-autocmd BufWritePost *.py call Pep8()
+let g:pep8_args = "--ignore=E501,W191"
+"autocmd BufWritePost *.py call Pep8()
 
 " Add the virtualenv's site-packages to vim path
 py << EOF
