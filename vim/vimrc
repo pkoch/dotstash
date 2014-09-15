@@ -11,17 +11,30 @@ filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+
+Plugin 'bling/vim-airline'
 Plugin 'edsono/vim-matchit'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'kevinw/pyflakes-vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'klen/rope-vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'klen/python-mode'
 Plugin 'leshill/vim-json'
-Plugin 'mileszs/ack.vim'
+Plugin 'Lokaltog/vim-easymotion'
 Plugin 'msanders/snipmate.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nvie/vim-pep8'
+Plugin 'Raimondi/delimitMate'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rsi'
+Plugin 'tpope/vim-surround'
+
 call vundle#end()
 filetype plugin indent on  " Enables filetype specific stuff
 
@@ -96,7 +109,6 @@ autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "nor
 
 let g:pyflakes_use_quickfix = 0
 
-set statusline=%<%f%h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}\\|%{&ff}]%y\ %-(%l,%c%V%) " Eu não percebo bem o q isto faz, mas ok
 set laststatus=2
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
