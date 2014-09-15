@@ -1,5 +1,3 @@
-"" Call pathogen before everything else.
-"
 " TODO
 " https://github.com/claytron/dotfiles/blob/master/.vimrc
 " http://sontek.net/turning-vim-into-a-modern-python-ide
@@ -8,11 +6,33 @@
 " http://vimzone.pixelblaster.ro/
 " https://github.com/blueyed/dotfiles
 "
-filetype off
-call pathogen#infect('bundle/{}')
-call pathogen#helptags()
-
 set nocompatible       " Use Vim defaults instead of 100% vi compatibility
+filetype off
+set runtimepath+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'blueyed/vim-autoclose'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'edsono/vim-matchit'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/rope-vim'
+Plugin 'leshill/vim-json'
+Plugin 'mileszs/ack.vim'
+Plugin 'msanders/snipmate.vim'
+Plugin 'nvie/vim-pep8'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
+Plugin 'thisivan/vim-taglist'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rvm'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/IndexedSearch'
+call vundle#end()
+filetype plugin indent on  " Enables filetype specific stuff
+
 set autoindent         " Auto indent new lines
 set smartindent        " Make autoindent smarter
 set smarttab           " Proper indenting with <Tab>
@@ -64,8 +84,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 if !exists("syntax_on")
   syntax on " Use syntax highlighting
 endif
-
-filetype plugin indent on  " Enables filetype specific stuff
 
 nnoremap <leader>g :GundoToggle<CR>
 let g:gundo_close_on_revert = 1
