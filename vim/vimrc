@@ -115,3 +115,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
             \ 'passive_filetypes': ['cucumber'] }
 
 nnoremap <leader>c :bwipeout<CR>
+
+let g:ctrlp_match_window = ''
+let g:ctrlp_max_files = ''
+let g:ctrlp_max_depth=40
