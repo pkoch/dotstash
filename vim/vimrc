@@ -12,6 +12,8 @@ set runtimepath+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Raimondi/delimitMate'
 Plugin 'bling/vim-airline'
 Plugin 'edsono/vim-matchit'
 Plugin 'gmarik/Vundle.vim'
@@ -20,11 +22,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'klen/python-mode'
 Plugin 'leshill/vim-json'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'msanders/snipmate.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nvie/vim-pep8'
-Plugin 'Raimondi/delimitMate'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -34,6 +34,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-surround'
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 filetype plugin indent on  " Enables filetype specific stuff
