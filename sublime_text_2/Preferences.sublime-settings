@@ -42,7 +42,9 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"vintage"
+		"vintage",
+		"Vagrant",
+		"Theme - Soda"
 	],
 	"indent_guide_options":
 	[
