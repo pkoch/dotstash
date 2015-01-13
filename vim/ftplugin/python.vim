@@ -5,7 +5,7 @@ autocmd FileType python setlocal autoindent nosmartindent cinwords=if,elif,else,
 
 " Auto-complete
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType python setlocal omnifunc=RopeCompleteFunc
+autocmd FileType python setlocal omnifunc=jedi#completions
 let g:pep8_args = "--ignore=E501,W191"
 "autocmd BufWritePost *.py call Pep8()
 
