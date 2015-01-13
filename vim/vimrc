@@ -136,6 +136,8 @@ nnoremap gp `[v`]`
 let g:syntastic_mode_map = { 'mode': 'active',
             \ 'passive_filetypes': ['cucumber'] }
 
+let g:syntastic_python_checkers = ['frosted', 'pylama', 'mypy', 'pep257', 'pyflakes', 'flake8', 'py3kwarn', 'prospector', 'python']
+
 nnoremap <leader>c :bwipeout<CR>
 
 let g:ctrlp_match_window = ''
