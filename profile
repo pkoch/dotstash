@@ -29,7 +29,7 @@ if [[ -f $HOME/.general_exports ]]; then
 fi
 
 
-if ! [ -z $PS1 ]; then
+if ! [[ -z $PS1 ]]; then
     alias ls='ls -GFhb'
     shopt -s checkwinsize # Check window after each command
     shopt -s cdspell      # This will correct minor spelling errors in a cd cmd
