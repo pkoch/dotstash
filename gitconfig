@@ -7,17 +7,26 @@
 	whitespace = trailing-space,space-before-tab,tab-in-indent
 
 [alias]
-	gl = log --graph --decorate --pretty=oneline --abbrev-commit --all --date-order
-	glb = log --graph --decorate --pretty=oneline --abbrev-commit
+	gl = log --graph --oneline --decorate --date-order --all
 	gla = !trap "" 13 && git log --graph --oneline --decorate --all $(git reflog | awk '{print $1}')
+	glb = log --graph --oneline --decorate --topo-order
+	lc = log --format='* %s' -n 25
 	b = branch
 	d = diff
 	dc = diff --cached
 	st = status -sb
+	s = status -s
 	ci = commit
 	co = checkout
-	up = checkout
 	ff = merge --ff-only
+	pff = pull --ff-only
+	mnff = merge --no-ff
+	pnff = pull --no-ff
+	pr = pull --rebase
+	cian = commit --amend --no-edit
+
+[advice]
+	statusHints = false
 
 [merge]
 	stat = False
