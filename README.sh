@@ -1,3 +1,5 @@
+# TODO
+# Check General-purpose dotfile utilities on https://dotfiles.github.io/
 DIRNAME=$(python -c "import os,sys; print os.path.realpath(sys.argv[1])" $(dirname $0))
 
 for COPIED in \
