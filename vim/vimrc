@@ -1,43 +1,41 @@
-" TODO
-" https://github.com/claytron/dotfiles/blob/master/.vimrc
-" http://sontek.net/turning-vim-into-a-modern-python-ide
-" http://vimcasts.org/episodes/using-the-changelist-and-jumplist/
-" http://vimdoc.sourceforge.net/htmldoc/quickfix.html
-" http://vimzone.pixelblaster.ro/
-" https://github.com/blueyed/dotfiles
-"
 set nocompatible       " Use Vim defaults instead of 100% vi compatibility
+
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
 
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Raimondi/delimitMate'
+"Plugin 'nathanaelkane/vim-indent-guides'  " I never remeber to use this. Maybe one day.
 Plugin 'bling/vim-airline'
+Plugin 'edkolev/promptline.vim'
 Plugin 'edsono/vim-matchit'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kevinw/pyflakes-vim'
+Plugin 'bling/vim-bufferline'
+Plugin 'guns/vim-clojure-static' " I was here. Check these docs.
 Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'klen/python-mode'
+Plugin 'kovisoft/paredit'
 Plugin 'leshill/vim-json'
 Plugin 'msanders/snipmate.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nvie/vim-pep8'
+Plugin 'raimondi/delimitMate'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-classpath'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rsi'
+Plugin 'tpope/vim-salve'
 Plugin 'tpope/vim-surround'
 Plugin 'wting/rust.vim'
 
 call vundle#end()
-filetype plugin indent on  " Enables filetype specific stuff
 
 set autoindent         " Auto indent new lines
 set smartindent        " Make autoindent smarter
@@ -64,7 +62,6 @@ set softtabstop=4 tabstop=4 shiftwidth=4 expandtab " Default whitespace settings
 set viminfo='20,\"50   " read/write a .viminfo file, don't store more than 50 lines of registers
 set wildmenu           " Enhanced command-line completion.
 set wildmode=list:longest " Show all alternatives and complete furtherest possible.
-set completeopt=menuone,longest,preview " Better completion menu
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 if version >= 703
@@ -73,7 +70,9 @@ if version >= 703
     set undodir=~/.vim/backup
 endif
 
-au FocusLost * silent! wall
+filetype plugin indent on  " Enables filetype specific stuff
+
+autocmd FocusLost * silent! wall
 set clipboard=unnamed " Share paste buffers with OS.
 
 set background=dark
@@ -84,8 +83,15 @@ call matchadd('WrongWhitespace', '^ \+\t\+')
 call matchadd('WrongWhitespace', '\s\+$')
 autocmd ColorScheme * highlight WrongWhitespace ctermbg=red guibg=red
 
-" This was causing too many diffs on undisciplined repositories
-autocmd BufWritePre * :%s/\s\+$//e
+" Why, tpope? Why does it have to be me? :(
+autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
+
+if version >= 704
+    autocmd BufWritePre * :keeppatterns %s/\s\+$//e
+else
+    " You'll get space poop in your '/' history. Upgrade your vim.
+    autocmd BufWritePre * :%s/\s\+$//e
+endif
 
 if !exists("syntax_on")
   syntax on " Use syntax highlighting
@@ -108,37 +114,41 @@ let NERDTreeMinimalUI=1
 " Retore last edit location when opening a file
 autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | exe "normal zz" | endif
 
-let g:pyflakes_use_quickfix = 0
+" Raibow parens
+au VimEnter * RainbowParenthesesActivate
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
 
-set laststatus=2
+let g:pyflakes_use_quickfix = 0
 
 " Highlight space errors in C/C++ source files (Vim tip #935)
 let c_space_errors=1
 
-" Como sugerido pelo Ademar, como implementado neste url
-au FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
-
-" We know xterm-debian is a color terminal
-if &term =~ "xterm-debian" || &term =~ "xterm-xfree86"
-  set t_Co=16
-  set t_Sf=^[[3%dm
-  set t_Sb=^[[4%dm
-endif
-
 " My pinky finger is never fast enough.
 command! W w
 command! Q q
+command! Qa qa
+command! Wa wa
 command! Wq wq
 
 " Select pasted text
-nnoremap gp `[v`]`
+noremap gp `[v`]`
 
 " Syntastic is too slow on cucumber
-let g:syntastic_mode_map = { 'mode': 'active',
-            \ 'passive_filetypes': ['cucumber'] }
+let g:syntastic_mode_map = {
+    \ 'mode': 'active',
+    \ 'passive_filetypes': [
+        \ 'cucumber',
+    \ ],
+\}
 
 nnoremap <leader>c :bwipeout<CR>
 
 let g:ctrlp_match_window = ''
 let g:ctrlp_max_files = ''
 let g:ctrlp_max_depth=40
+
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#bufferline#enabled = 1
