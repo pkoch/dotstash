@@ -1,3 +1,5 @@
+" TODO
+" https://github.com/dotphiles/dotvim
 set nocompatible       " Use Vim defaults instead of 100% vi compatibility
 
 filetype off
