@@ -18,6 +18,11 @@ function __promptline_last_exit_code {
 function __promptline_ps1 {
   local slice_prefix slice_empty_prefix slice_joiner slice_suffix is_prompt_empty=1
 
+  # section "warn" header
+  slice_prefix="${warn_bg}${b_fg} Unclean exit :${space}" slice_suffix="$space${warn_fg_rev}${warn_bg_rev}${sep}${reset}\n"
+  # section "warn" slices
+  __promptline_wrapper "$(__promptline_last_exit_code)" "$slice_prefix" "$slice_suffix"
+
   # section "a" header
   slice_prefix="${a_bg}${sep}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
   [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
@@ -41,12 +46,6 @@ function __promptline_ps1 {
   [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
   # section "y" slices
   __promptline_wrapper "$(__promptline_vcs_branch)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
-
-  # section "warn" header
-  slice_prefix="${warn_bg}${sep}${warn_fg}${warn_bg}${space}" slice_suffix="$space${warn_sep_fg}" slice_joiner="${warn_fg}${warn_bg}${alt_sep}${space}" slice_empty_prefix="${warn_fg}${warn_bg}${space}"
-  [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
-  # section "warn" slices
-  __promptline_wrapper "$(__promptline_last_exit_code)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
   # close sections
   printf "%s" "${reset_bg}${sep}$reset$space"
@@ -172,6 +171,8 @@ function __promptline {
   local c_sep_fg="${wrap}38;5;234${end_wrap}"
   local warn_fg="${wrap}38;5;232${end_wrap}"
   local warn_bg="${wrap}48;5;166${end_wrap}"
+  local warn_bg_rev="${wrap}48;5;232${end_wrap}"
+  local warn_fg_rev="${wrap}38;5;166${end_wrap}"
   local warn_sep_fg="${wrap}38;5;166${end_wrap}"
   local y_fg="${wrap}38;5;255${end_wrap}"
   local y_bg="${wrap}48;5;238${end_wrap}"
