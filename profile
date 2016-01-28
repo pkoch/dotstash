@@ -13,7 +13,9 @@ if [[ -f $HOME/.general_exports ]]; then
 fi
 
 if ! [[ -z $PS1 ]]; then
-    alias ls='ls -GFhb'
+    if [[ -f $HOME/.aliases ]]; then
+        . $HOME/.aliases
+    fi
     bind Space:magic-space
     bind '"\e[A"':history-search-backward
     bind '"\e[B"':history-search-forward

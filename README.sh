@@ -13,6 +13,7 @@ for LINKED in \
     'shell_prompt.sh' \
     'profile' \
     'ackrc' \
+    'aliases' \
 ; do
     ln -s $DIRNAME/$LINKED .$LINKED
 done
