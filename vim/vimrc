@@ -37,6 +37,26 @@ Plugin 'wting/rust.vim'
 
 call vundle#end()
 
+let g:rbpt_colorpairs = [
+  \ ['darkgreen', ''],
+  \ ['darkmagenta', ''],
+  \ ['darkyellow', ''],
+  \ ['darkblue', ''],
+  \ ['darkgreen', ''],
+  \ ['darkred', ''],
+  \ ['darkgray', ''],
+  \ ['cyan', ''],
+  \ ['green', ''],
+  \ ['magenta', ''],
+  \ ['brown', ''],
+  \ ['blue', ''],
+  \ ['green', ''],
+  \ ['red', ''],
+  \ ['gray', ''],
+  \ ['white', ''],
+\ ]
+
+
 set autoindent         " Auto indent new lines
 set smartindent        " Make autoindent smarter
 set smarttab           " Proper indenting with <Tab>
