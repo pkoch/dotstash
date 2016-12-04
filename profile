@@ -8,6 +8,16 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv >/dev/null ; then
+    eval "$(rbenv init -)"
+fi
+
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then
+    eval "$(pyenv init -)";
+fi
+
 if [[ -f $HOME/.general_exports ]]; then
     . $HOME/.general_exports
 fi
