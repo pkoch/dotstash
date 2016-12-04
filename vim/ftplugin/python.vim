@@ -4,7 +4,6 @@ setlocal autoindent nosmartindent cinwords=if,elif,else,for,while,with,try,excep
 
 " Auto-complete
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-python setlocal omnifunc=RopeCompleteFunc
 let g:pep8_args = "--ignore=E501,W191"
 "autocmd BufWritePost *.py call Pep8()
 
