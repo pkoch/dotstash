@@ -1,41 +1,34 @@
 set nocompatible       " Use Vim defaults instead of 100% vi compatibility
 
 filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
+call dein#begin('~/.vim')
 
-"Plugin 'nathanaelkane/vim-indent-guides'  " I never remeber to use this. Maybe one day.
-Plugin 'bling/vim-airline'
-Plugin 'edkolev/promptline.vim'
-Plugin 'edsono/vim-matchit'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'bling/vim-bufferline'
-Plugin 'guns/vim-clojure-static' " I was here. Check these docs.
-Plugin 'kien/ctrlp.vim'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'klen/python-mode'
-Plugin 'kovisoft/paredit'
-Plugin 'leshill/vim-json'
-Plugin 'msanders/snipmate.vim'
-Plugin 'nvie/vim-pep8'
-Plugin 'raimondi/delimitMate'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-classpath'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-leiningen'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rsi'
-Plugin 'tpope/vim-salve'
-Plugin 'tpope/vim-surround'
-Plugin 'wting/rust.vim'
+" Plugin 'nathanaelkane/vim-indent-guides'  " I never remeber to use this. Maybe one day.
+call dein#add('Shougo/dein.vim')
+call dein#add('bling/vim-airline')
+call dein#add('eapache/rainbow_parentheses.vim')
+call dein#add('garbas/vim-snipmate')
+call dein#add('hashivim/vim-terraform')
+call dein#add('kien/ctrlp.vim')
+call dein#add('marcweber/vim-addon-mw-utils') " Dep of vim-snipmate
+call dein#add('nvie/vim-pep8')
+call dein#add('raimondi/delimitMate')
+call dein#add('scrooloose/syntastic')
+call dein#add('tomtom/tlib_vim') " Dep of vim-snipmate
+call dein#add('tpope/vim-classpath')
+call dein#add('tpope/vim-dispatch')
+call dein#add('tpope/vim-fireplace')
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-leiningen')
+call dein#add('tpope/vim-projectionist')
+call dein#add('tpope/vim-repeat')
+call dein#add('tpope/vim-rsi')
+call dein#add('tpope/vim-salve')
+call dein#add('tpope/vim-surround')
+call dein#add('vim-scripts/matchit.zip')
 
-call vundle#end()
+call dein#end()
 
 let g:rbpt_colorpairs = [
   \ ['darkgreen', ''],
