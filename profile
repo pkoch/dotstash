@@ -4,8 +4,8 @@ if ! ps aux | grep ssh-agent | grep `whoami` | grep -v grep > /dev/null; then
     ssh-add 2> /dev/null
 fi
 
-if [[ -f `brew --prefix`/etc/bash_completion ]]; then
-    . `brew --prefix`/etc/bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
 fi
 
 if [[ -f $HOME/.general_exports ]]; then
