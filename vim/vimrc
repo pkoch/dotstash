@@ -31,24 +31,23 @@ call dein#add('vim-scripts/matchit.zip')
 call dein#end()
 
 let g:rbpt_colorpairs = [
-  \ ['darkgreen', ''],
-  \ ['darkmagenta', ''],
-  \ ['darkyellow', ''],
-  \ ['darkblue', ''],
-  \ ['darkgreen', ''],
-  \ ['darkred', ''],
-  \ ['darkgray', ''],
-  \ ['cyan', ''],
-  \ ['green', ''],
-  \ ['magenta', ''],
-  \ ['brown', ''],
-  \ ['blue', ''],
-  \ ['green', ''],
-  \ ['red', ''],
-  \ ['gray', ''],
-  \ ['white', ''],
+  \ ['darkgreen', 'darkgreen'],
+  \ ['darkmagenta', 'darkmagenta'],
+  \ ['darkyellow', 'darkyellow'],
+  \ ['darkblue', 'darkblue'],
+  \ ['darkgreen', 'darkgreen'],
+  \ ['darkred', 'darkred'],
+  \ ['darkgray', 'darkgray'],
+  \ ['cyan', 'cyan'],
+  \ ['green', 'green'],
+  \ ['magenta', 'magenta'],
+  \ ['brown', 'brown'],
+  \ ['blue', 'blue'],
+  \ ['green', 'green'],
+  \ ['red', 'red'],
+  \ ['gray', 'gray'],
+  \ ['white', 'white'],
 \ ]
-
 
 set autoindent         " Auto indent new lines
 set smartindent        " Make autoindent smarter
