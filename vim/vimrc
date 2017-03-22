@@ -4,7 +4,6 @@ filetype off
 set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
 call dein#begin('~/.vim')
 
-" Plugin 'nathanaelkane/vim-indent-guides'  " I never remeber to use this. Maybe one day.
 call dein#add('Shougo/dein.vim')
 call dein#add('bling/vim-airline')
 call dein#add('eapache/rainbow_parentheses.vim')
@@ -12,6 +11,7 @@ call dein#add('garbas/vim-snipmate')
 call dein#add('hashivim/vim-terraform')
 call dein#add('kien/ctrlp.vim')
 call dein#add('marcweber/vim-addon-mw-utils') " Dep of vim-snipmate
+call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('nvie/vim-pep8')
 call dein#add('raimondi/delimitMate')
 call dein#add('scrooloose/syntastic')
@@ -165,3 +165,5 @@ let g:ctrlp_max_depth=40
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
+
+au Syntax * IndentGuidesEnable
