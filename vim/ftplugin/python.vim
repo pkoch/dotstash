@@ -8,7 +8,7 @@ let g:pep8_args = "--ignore=E501,W191"
 "autocmd BufWritePost *.py call Pep8()
 
 " Add the virtualenv's site-packages to vim path
-py << EOF
+python3 << EOF
 import os.path
 import sys
 import vim
@@ -19,7 +19,7 @@ if 'VIRTUAL_ENV' in os.environ:
     try:
         execfile(activate_this, dict(__file__=activate_this))
     except:
-        print "ERROR activating virtualenv's '%s'. VIRTUAL_ENV is '%s'."%(activate_this, project_base_dir,)
+        print("ERROR activating virtualenv's '%s'. VIRTUAL_ENV is '%s'."%(activate_this, project_base_dir,))
 EOF
 
 let $DJANGO_SETTINGS_MODULE='settings'
