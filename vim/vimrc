@@ -1,91 +1,90 @@
-set nocompatible       " Use Vim defaults instead of 100% vi compatibility
-
-filetype off
+set nocompatible  " Vim, not vi.
 set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
+
 call dein#begin('~/.vim')
 
 call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+call dein#add('Shougo/vimshell')
 call dein#add('bling/vim-airline')
+call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('eapache/rainbow_parentheses.vim')
+call dein#add('elixir-lang/vim-elixir')
+call dein#add('ervandew/supertab')
 call dein#add('garbas/vim-snipmate')
 call dein#add('hashivim/vim-terraform')
-call dein#add('kien/ctrlp.vim')
+call dein#add('lrvick/Conque-Shell')
 call dein#add('marcweber/vim-addon-mw-utils') " Dep of vim-snipmate
 call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('nvie/vim-pep8')
+call dein#add('powerman/vim-plugin-AnsiEsc') " Derp of alchemist.vim
 call dein#add('raimondi/delimitMate')
 call dein#add('scrooloose/syntastic')
+call dein#add('slashmili/alchemist.vim')
 call dein#add('tomtom/tlib_vim') " Dep of vim-snipmate
-call dein#add('tpope/vim-classpath')
 call dein#add('tpope/vim-dispatch')
-call dein#add('tpope/vim-fireplace')
 call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-leiningen')
-call dein#add('tpope/vim-projectionist')
 call dein#add('tpope/vim-repeat')
 call dein#add('tpope/vim-rsi')
-call dein#add('tpope/vim-salve')
 call dein#add('tpope/vim-surround')
 call dein#add('vim-scripts/matchit.zip')
 
 call dein#end()
 
 let g:rbpt_colorpairs = [
-  \ ['darkgreen', 'darkgreen'],
-  \ ['darkmagenta', 'darkmagenta'],
-  \ ['darkyellow', 'darkyellow'],
-  \ ['darkblue', 'darkblue'],
-  \ ['darkgreen', 'darkgreen'],
-  \ ['darkred', 'darkred'],
-  \ ['darkgray', 'darkgray'],
-  \ ['cyan', 'cyan'],
-  \ ['green', 'green'],
-  \ ['magenta', 'magenta'],
-  \ ['brown', 'brown'],
-  \ ['blue', 'blue'],
-  \ ['green', 'green'],
-  \ ['red', 'red'],
-  \ ['gray', 'gray'],
-  \ ['white', 'white'],
+\ ['darkgreen', 'darkgreen'],
+\ ['darkmagenta', 'darkmagenta'],
+\ ['darkyellow', 'darkyellow'],
+\ ['darkblue', 'darkblue'],
+\ ['darkgreen', 'darkgreen'],
+\ ['darkred', 'darkred'],
+\ ['darkgray', 'darkgray'],
+\ ['cyan', 'cyan'],
+\ ['green', 'green'],
+\ ['magenta', 'magenta'],
+\ ['brown', 'brown'],
+\ ['blue', 'blue'],
+\ ['green', 'green'],
+\ ['red', 'red'],
+\ ['gray', 'gray'],
+\ ['white', 'white'],
 \ ]
 
 set autoindent         " Auto indent new lines
-set smartindent        " Make autoindent smarter
-set smarttab           " Proper indenting with <Tab>
 set autowrite          " Automatically save before commands like :next and :make
 set backspace=indent,eol,start " more powerful backspacing
 set cursorline         " Highlight current line
 set foldmethod=indent
 set foldlevel=99
-set hidden             " Hide buffers when they are abandoned
-set history=50         " keep 50 lines of command line history
-set ignorecase         " Wait for smartcase...
-set smartcase          " Do smart case matching when searching
+set history=1000       " keep a few lines of command line history
+set ignorecase         " Ignore case in search...
+set smartcase          " ... unless we use capital letters.
 set incsearch          " Incremental search
 set hlsearch           " Highlight search results
 set list               " Show invisibles
 set listchars=tab:▸\ ,eol:¬
-set mouse=a            " Enable mouse usage (all modes) in terminals
+set mouse=a            " Enable mouse usage (in all modes) in terminals
 set ruler              " show the cursor position all the time
 set scrolloff=3        " Never lean to the top or bottom of the window
 set showcmd            " Show (partial) command in status line.
 set showmatch          " Show matching brackets.
 set softtabstop=2 tabstop=2 shiftwidth=2 expandtab " Default whitespace settings
 set viminfo='20,\"50   " read/write a .viminfo file, don't store more than 50 lines of registers
-set wildmenu           " Enhanced command-line completion.
-set wildmode=list:longest " Show all alternatives and complete furtherest possible.
+set wildmode=longest,list,full
+set wildignorecase
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 if version >= 703
-    set colorcolumn=80     " Vertical line on column 80
-    set undofile           " Persistent undo history
-    set undodir=~/.vim/backup
+  set colorcolumn=80     " Vertical line on column 80
+  set undofile           " Persistent undo history
+  set undodir=~/.vim/backup
 endif
 
 filetype plugin indent on  " Enables filetype specific stuff
 
 autocmd FocusLost * silent! wall
-set clipboard=unnamed " Share paste buffers with OS.
+" set clipboard=unnamed " Share paste buffers with OS.
 
 set background=dark
 colorscheme darkblue
@@ -95,33 +94,25 @@ call matchadd('WrongWhitespace', '^ \+\t\+')
 call matchadd('WrongWhitespace', '\s\+$')
 autocmd ColorScheme * highlight WrongWhitespace ctermbg=red guibg=red
 
-" Why, tpope? Why does it have to be me? :(
-autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
-
 if version >= 704
-    autocmd BufWritePre * :keeppatterns %s/\s\+$//e
+  autocmd BufWritePre * :keeppatterns %s/\s\+$//e
 else
-    " You'll get space poop in your '/' history. Upgrade your vim.
-    autocmd BufWritePre * :%s/\s\+$//e
+  " You'll get space poop in your '/' history. Upgrade your vim.
+  autocmd BufWritePre * :%s/\s\+$//e
 endif
 
 if !exists("syntax_on")
   syntax on " Use syntax highlighting
 endif
 
-nnoremap <leader>g :GundoToggle<CR>
-let g:gundo_close_on_revert = 1
-
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.pyo,.pyc,.rbc
 
-nnoremap <leader>n :NERDTreeToggle<CR>
-let NERDTreeIgnore = []
+let wildignore = []
 for suffix in split(&suffixes, ',')
-    let NERDTreeIgnore += [ escape(suffix, '.~$') . '$' ]
+  let wildignore += [ escape(suffix, '.~$') . '$' ]
 endfor
-let NERDTreeMinimalUI=1
 
 " Retore last edit location when opening a file
 autocmd BufReadPost * if line("'\"") > 0 && line ("'\"") <= line("$") | exe "normal g'\"" | exe "normal zz" | endif
@@ -131,10 +122,11 @@ au VimEnter * RainbowParenthesesActivate
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+au Syntax * IndentGuidesEnable
+au Syntax * set textwidth=80 formatoptions+=t
 
 let g:pyflakes_use_quickfix = 0
 
-" Highlight space errors in C/C++ source files (Vim tip #935)
 let c_space_errors=1
 
 " My pinky finger is never fast enough.
@@ -146,19 +138,17 @@ command! Wq wq
 
 " Select pasted text
 noremap gp `[v`]`
+nnoremap <leader>c :bwipeout<CR>
 
 " Syntastic is too slow on cucumber
 let g:syntastic_mode_map = {
-    \ 'mode': 'active',
-    \ 'passive_filetypes': [
-        \ 'cucumber',
-    \ ],
+\ 'mode': 'active',
+\ 'passive_filetypes': [
+  \ 'cucumber',
+\ ],
 \}
 
 let g:syntastic_python_checkers = ['frosted', 'pylama', 'mypy', 'pep257', 'pyflakes', 'flake8', 'py3kwarn', 'prospector', 'python']
-
-nnoremap <leader>c :bwipeout<CR>
-
 let g:ctrlp_match_window = ''
 let g:ctrlp_max_files = ''
 let g:ctrlp_max_depth=40
@@ -166,4 +156,4 @@ let g:ctrlp_max_depth=40
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
 
-au Syntax * IndentGuidesEnable
+let g:neocomplete#enable_at_startup = 1
