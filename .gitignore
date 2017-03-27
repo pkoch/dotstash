@@ -1,5 +1,5 @@
 .DS_Store
 vim/.netrwhist
 vim/backup/
-vim/repos/
+vim/plugged/
 vim/.cache/
