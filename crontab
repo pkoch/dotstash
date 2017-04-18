@@ -1,0 +1,2 @@
+AWS_PROFILE=pkoch
+0 * * * * /usr/local/bin/aws s3 sync --exclude "Icon" --exclude ".dropbox" --exclude "*/.dropbox" ~pkoch/Dropbox s3://pkoch-archive/Dropbox
