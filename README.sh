@@ -8,6 +8,9 @@ for COPIED in \
     cp $COPIED $HOME/.$COPIED
 done
 
+mkdir $HOME/.gnupg
+cp gpg.conf $HOME/.gnupg/
+
 cd $HOME
 for LINKED in \
     'vim' \
