@@ -2,6 +2,7 @@ DIRNAME=$(python -c "import os,sys; print os.path.realpath(sys.argv[1])" $(dirna
 
 for COPIED in \
     'gitconfig' \
+    'gitconfig-lom' \
     'hgrc' \
 ; do
     cp $COPIED $HOME/.$COPIED

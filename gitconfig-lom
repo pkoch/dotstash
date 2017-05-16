@@ -1,0 +1,6 @@
+[user]
+	name = Paulo Köch
+	email = pkoch@lifeonmars.pt
+	signingkey = pkoch@lifeonmars.pt
+[commit]
+	gpgsign = true

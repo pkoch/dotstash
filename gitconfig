@@ -1,6 +1,9 @@
 [user]
-	name = Paulo Koch
+	name = Paulo Köch
 	email = paulo.koch@gmail.com
+
+[includeIf "gitdir:~/Desktop/lom/"]
+	path = .gitconfig-lom
 
 [core]
 	editor = vim
