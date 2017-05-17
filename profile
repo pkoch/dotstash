@@ -1,11 +1,13 @@
-# Autoload ssh-agent
-if ! ps aux | grep ssh-agent | grep `whoami` | grep -v grep > /dev/null; then
-    eval $(ssh-agent)
-    ssh-add 2> /dev/null
-fi
+if [[ "$(uname -a | awk '{print $1}')" == "Darwin" ]]; then
+    # Autoload ssh-agent
+    if ! ps aux | grep ssh-agent | grep `whoami` | grep -v grep > /dev/null; then
+        eval $(ssh-agent)
+        ssh-add 2> /dev/null
+    fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
 fi
 
 export RBENV_ROOT=/usr/local/var/rbenv
