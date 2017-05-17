@@ -20,6 +20,12 @@ if which pyenv > /dev/null; then
     eval "$(pyenv init -)";
 fi
 
+if [ -n "$BASH_VERSION" ]; then
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
+
 if [[ -f $HOME/.general_exports ]]; then
     . $HOME/.general_exports
 fi
