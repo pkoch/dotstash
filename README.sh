@@ -17,6 +17,7 @@ for LINKED in \
     'profile' \
     'ackrc' \
     'aliases' \
+    'general_exports' \
 ; do
     ln -s $DIRNAME/$LINKED .$LINKED
 done

@@ -1,3 +1,7 @@
+if [[ -f $HOME/.general_exports ]]; then
+    . $HOME/.general_exports
+fi
+
 if [[ "$(uname -a | awk '{print $1}')" == "Darwin" ]]; then
     # Autoload ssh-agent
     if ! ps aux | grep ssh-agent | grep `whoami` | grep -v grep > /dev/null; then
