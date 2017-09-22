@@ -3,33 +3,16 @@ set nocompatible  " Vim, not vi.
 call plug#begin()
 Plug 'tpope/vim-sensible'
 
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Shougo/vimshell'
-Plug 'bling/vim-airline'
-Plug 'ctrlpvim/ctrlp.vim'  " TODO Use Fzy instead
 Plug 'eapache/rainbow_parentheses.vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'ervandew/supertab'
-Plug 'garbas/vim-snipmate'
+Plug 'elixir-editors/vim-elixir'
 Plug 'hashivim/vim-terraform'
-Plug 'lrvick/Conque-Shell'
-Plug 'marcweber/vim-addon-mw-utils' " Dep of vim-snipmate
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'nvie/vim-pep8'
-Plug 'powerman/vim-plugin-AnsiEsc' " Dep of alchemist.vim
-Plug 'raimondi/delimitMate'
 Plug 'scrooloose/syntastic'
 Plug 'slashmili/alchemist.vim'
-Plug 'tomtom/tlib_vim' " Dep of vim-snipmate
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-scriptease'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-surround'
-Plug 'vim-scripts/matchit.zip'
 
 call plug#end()
 
@@ -64,8 +47,7 @@ set listchars=tab:▸\ ,eol:¬
 set mouse=a            " Enable mouse usage (in all modes) in terminals
 set showmatch          " Show matching brackets.
 set softtabstop=2 tabstop=2 shiftwidth=2 expandtab " Default whitespace settings
-set wildmode=longest:full
-set wildignorecase
+set wildmode=list:longest
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 if version >= 703
@@ -74,11 +56,11 @@ if version >= 703
   set undodir=~/.vim/backup
 endif
 
+
 autocmd FocusLost * silent! wall
 " set clipboard=unnamed " Share paste buffers with OS.
 
-set background=dark
-colorscheme darkblue
+colorscheme industry
 
 highlight WrongWhitespace ctermbg=red guibg=red
 call matchadd('WrongWhitespace', '^ \+\t\+')
@@ -109,10 +91,7 @@ au VimEnter * RainbowParenthesesActivate
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-au Syntax * IndentGuidesEnable
 au Syntax * set textwidth=80 formatoptions+=t
-
-let g:pyflakes_use_quickfix = 0
 
 let c_space_errors=1
 
@@ -125,7 +104,6 @@ command! Wq wq
 
 " Select pasted text
 noremap gp `[v`]`
-nnoremap <leader>c :bwipeout<CR>
 
 " Syntastic is too slow on cucumber
 let g:syntastic_mode_map = {
@@ -134,16 +112,6 @@ let g:syntastic_mode_map = {
   \ 'cucumber',
 \ ],
 \}
-
-let g:syntastic_python_checkers = ['frosted', 'pylama', 'mypy', 'pep257', 'pyflakes', 'flake8', 'py3kwarn', 'prospector', 'python']
-let g:ctrlp_match_window = ''
-let g:ctrlp_max_files = ''
-let g:ctrlp_max_depth=40
-
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#bufferline#enabled = 1
-
-let g:neocomplete#enable_at_startup = 1
 
 function! FzyCommand(choice_command, vim_command)
   try
@@ -157,6 +125,12 @@ function! FzyCommand(choice_command, vim_command)
   endif
 endfunction
 
-nnoremap <leader>e :call FzyCommand("ag . -l -g ''", ":e")<cr>
-nnoremap <leader>v :call FzyCommand("ag . -l -g ''", ":vs")<cr>
-nnoremap <leader>s :call FzyCommand("ag . -l -g ''", ":sp")<cr>
+nnoremap <leader>e :call FzyCommand("ack . -l", ":e")<cr>
+nnoremap <leader>v :call FzyCommand("ack . -l", ":vs")<cr>
+nnoremap <leader>s :call FzyCommand("ack . -l", ":sp")<cr>
+
+" <C-@> is what vim gets when you press Control+Space
+inoremap <C-@> <c-x><c-o>
+
+autocmd FileType elixir let b:dispatch = 'mix test'
+nnoremap  :Dispatch<CR>
