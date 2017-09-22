@@ -8,18 +8,20 @@ for COPIED in \
     cp $COPIED $HOME/.$COPIED
 done
 
-mkdir $HOME/.gnupg
-cp gpg.conf $HOME/.gnupg/
 
 cd $HOME
 for LINKED in \
-    'vim' \
-    'profile' \
     'ackrc' \
     'aliases' \
     'general_exports' \
+    'profile' \
+    'vim' \
 ; do
     ln -s $DIRNAME/$LINKED .$LINKED
 done
 
+mkdir -p $HOME/.gnupg
+ln -s $DIRNAME/gpg.conf $HOME/.gnupg/
+
 echo "Don't forget to source ~/.profile"
+echo "Consider running `crontab $DIRNAME/crontab`"
