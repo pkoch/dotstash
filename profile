@@ -41,5 +41,4 @@ if ! [[ -z $PS1 ]]; then
     shopt -s cdspell      # This will correct minor spelling errors in a cd cmd
     shopt -s histappend   # Append to history rather than overwrite
     shopt -s histreedit   # Edit failled substitutions
-    source $HOME/.shell_prompt.sh
 fi

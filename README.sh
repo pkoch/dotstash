@@ -14,7 +14,6 @@ cp gpg.conf $HOME/.gnupg/
 cd $HOME
 for LINKED in \
     'vim' \
-    'shell_prompt.sh' \
     'profile' \
     'ackrc' \
     'aliases' \
