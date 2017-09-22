@@ -14,25 +14,23 @@ if [[ "$(uname -a | awk '{print $1}')" == "Darwin" ]]; then
     fi
 fi
 
-export RBENV_ROOT=/usr/local/var/rbenv
+if which exenv >/dev/null ; then
+    eval "$(exenv init -)"
+fi
+
 if which rbenv >/dev/null ; then
     eval "$(rbenv init -)"
 fi
 
-export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then
     eval "$(pyenv init -)";
-fi
-
-if [ -n "$BASH_VERSION" ]; then
-    if [ -f "$HOME/.bashrc" ]; then
-        . "$HOME/.bashrc"
+    if pyenv virtualenv-init 2>&1 | grep -v 'no such command' >/dev/null; then
+        eval "$(pyenv virtualenv-init -)";
     fi
 fi
 
-if [[ -f $HOME/.general_exports ]]; then
-    . $HOME/.general_exports
-fi
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 if ! [[ -z $PS1 ]]; then
     if [[ -f $HOME/.aliases ]]; then
