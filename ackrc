@@ -1,6 +1,10 @@
 --ignore-dir=.env
 --ignore-dir=django
+--ignore-dir=node_modules
+--ignore-dir=dist
+--ignore-file=is:yarn.lock
 
+--type-add=js=.jsx
 --type-set=json=.json
 
 --smart-case
