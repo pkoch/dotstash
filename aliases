@@ -1,2 +1,0 @@
-alias ls='ls -GFhb'
-alias dev="ssh -A -t dev21-devc 'bin/agentlocaltmux -CC attach'"

@@ -1,4 +1,0 @@
-AWS_PROFILE=pkoch
-#mh d m w
-0 * * * * /usr/local/bin/aws s3 sync --exclude "Icon" --exclude ".dropbox" --exclude "*/.dropbox" ~pkoch/Dropbox s3://pkoch-archive/Dropbox
-0 2 * * * export PATH="/usr/local/bin:$PATH"; brew update && brew upgrade && brew cleanup; brew doctor
